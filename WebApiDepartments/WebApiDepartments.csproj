@@ -242,11 +242,11 @@
       <Project>{05278944-B353-4801-9E0A-4C402A171F4E}</Project>
       <Name>Common</Name>
     </ProjectReference>
-    <ProjectReference Include="..\Unity\Web.csproj">
+    <ProjectReference Include="..\Web\Web.csproj">
       <Project>{35229CA9-9043-44E5-9122-8C5C1753D99C}</Project>
       <Name>Web</Name>
     </ProjectReference>
-    <ProjectReference Include="..\Users\Repositories.csproj">
+    <ProjectReference Include="..\Repositories\Repositories.csproj">
       <Project>{5E22C2AB-DAD9-423A-B888-50D74280F69A}</Project>
       <Name>Repositories</Name>
     </ProjectReference>

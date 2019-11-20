@@ -164,12 +164,6 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Reference Include="EntityFramework">
-      <HintPath>..\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.dll</HintPath>
-    </Reference>
-    <Reference Include="EntityFramework.SqlServer">
-      <HintPath>..\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.SqlServer.dll</HintPath>
-    </Reference>
     <Reference Include="Microsoft.AspNet.Identity.Core">
       <HintPath>..\packages\Microsoft.AspNet.Identity.Core.2.2.1\lib\net45\Microsoft.AspNet.Identity.Core.dll</HintPath>
     </Reference>
@@ -257,11 +251,11 @@
       <Project>{05278944-B353-4801-9E0A-4C402A171F4E}</Project>
       <Name>Common</Name>
     </ProjectReference>
-    <ProjectReference Include="..\Unity\Web.csproj">
+    <ProjectReference Include="..\Web\Web.csproj">
       <Project>{35229CA9-9043-44E5-9122-8C5C1753D99C}</Project>
       <Name>Web</Name>
     </ProjectReference>
-    <ProjectReference Include="..\Users\Repositories.csproj">
+    <ProjectReference Include="..\Repositories\Repositories.csproj">
       <Project>{5E22C2AB-DAD9-423A-B888-50D74280F69A}</Project>
       <Name>Repositories</Name>
     </ProjectReference>

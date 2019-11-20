@@ -5,11 +5,11 @@ VisualStudioVersion = 16.0.29509.3
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WebApiUsers", "WebApiUsers\WebApiUsers.csproj", "{D174ED1D-86C8-459C-B607-96D418A88713}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Repositories", "Users\Repositories.csproj", "{5E22C2AB-DAD9-423A-B888-50D74280F69A}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Repositories", "Repositories\Repositories.csproj", "{5E22C2AB-DAD9-423A-B888-50D74280F69A}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Common", "Common\Common.csproj", "{05278944-B353-4801-9E0A-4C402A171F4E}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Web", "Unity\Web.csproj", "{35229CA9-9043-44E5-9122-8C5C1753D99C}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Web", "Web\Web.csproj", "{35229CA9-9043-44E5-9122-8C5C1753D99C}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WebApiDepartments", "WebApiDepartments\WebApiDepartments.csproj", "{B402C255-4F99-4BB5-A885-1A729D40909C}"
 EndProject
