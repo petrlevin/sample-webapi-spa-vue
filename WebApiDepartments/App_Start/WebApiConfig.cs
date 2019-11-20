@@ -12,6 +12,8 @@ using Unity;
 using Unity.Injection;
 using Unity.Lifetime;
 using Web;
+using System.Web.Http.Cors;
+
 
 namespace WebApiDepartments
 {
@@ -19,7 +21,8 @@ namespace WebApiDepartments
     {
         public static void Register(HttpConfiguration config)
         {
-   
+
+            config.EnableCors();
             // Web API routes
             config.MapHttpAttributeRoutes();
 

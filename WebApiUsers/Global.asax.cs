@@ -18,5 +18,14 @@ namespace WebApiUsers
             FilterConfig.RegisterGlobalFilters(GlobalFilters.Filters);
  
         }
+
+        protected void Application_BeginRequest()
+        {
+            if (Request.Headers.AllKeys.Contains("Origin") && Request.HttpMethod == "OPTIONS")
+            {
+                var u =  8;
+                //Response.Flush();
+            }
+        }
     }
 }

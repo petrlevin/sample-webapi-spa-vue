@@ -3,7 +3,7 @@ import App from './App.vue';
 import 'devextreme/dist/css/dx.common.css';
 import 'devextreme/dist/css/dx.light.css';
 
-Vue.config.productionTip = true;
+Vue.config.productionTip =                     true;
 
 new Vue({
     render: h => h(App)

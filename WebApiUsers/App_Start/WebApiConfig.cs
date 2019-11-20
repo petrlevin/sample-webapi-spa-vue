@@ -12,6 +12,7 @@ using Unity;
 using Unity.Injection;
 using Unity.Lifetime;
 using Web;
+using System.Web.Http.Cors;
 
 
 namespace WebApiUsers
@@ -20,7 +21,8 @@ namespace WebApiUsers
     {
         public static void Register(HttpConfiguration config)
         {
-   
+
+            EnableCrossSiteRequests(config);
             // Web API routes
             config.MapHttpAttributeRoutes();
 
@@ -34,6 +36,16 @@ namespace WebApiUsers
             var connectionString = ConfigurationManager.ConnectionStrings["DefaultConnection"].ConnectionString;
             config.DependencyResolver = UnityRegistrator.RegisterRepository<User, UserRepository>(connectionString);
 
+        }
+
+        private static void EnableCrossSiteRequests(HttpConfiguration config
+            )
+        {
+            var cors = new EnableCorsAttribute(
+                origins: "*",
+                headers: "*",
+                methods: "*");
+            config.EnableCors(cors);
         }
     }
 }
