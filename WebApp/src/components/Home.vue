@@ -186,10 +186,10 @@
             },
             deleteUser: function () {
                 this.progress = true;
-                let user = this.currentUser();
-                axios.delete(webApi.users+'/'+user.Id,this.userData.Id)
+                let userId = this.userData.Id;
+                axios.delete(webApi.users+'/'+userId)
                     .then(_ => {
-                        this.usersStore.remove(this.userData.Id);
+                        this.usersStore.remove(userId);
                       })
                     .catch(error => console.log(this.error = error))
                     .finally(this.progress = false);
