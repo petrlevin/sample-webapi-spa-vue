@@ -89,7 +89,7 @@
     import { DxForm, DxItem } from 'devextreme-vue/form';
     
     import ArrayStore from 'devextreme/data/array_store';
-    import State from 'state.js';
+    import State from './state.js';
     import webApi from '../webapi.config.js';
     import axios from 'axios';
 
@@ -147,10 +147,10 @@
             }
         },
         methods: {
-            cancel: function () {
+            cancel() {
                 this.state = State.browsing;
             },
-            modify: function () {
+            modify() {
                 this.progress = true;
                 axios[this.state.action](webApi.users, this.userData)
                     .then(response => this[this.state.callback](response))
@@ -158,21 +158,21 @@
                     .catch(error => console.log(this.error = error))
                     .finally(this.progress = false);
             },
-            onInsert: function (response) {
+            onInsert(response) {
                 console.log(response);
                 this.userData.Id = response.data;
                 this.usersStore.insert(this.userData);       
             },
-            onUpdate: function () {
+            onUpdate() {
                 Object.assign(this.currentUser(), this.userData);
             },
-            startInsert: function () {
+            startInsert() {
                 this.state = State.inserting;
             },
-            startEdit: function () {
+            startEdit() {
                 this.state = State.editing;
             },
-            deleteUser: function () {
+            deleteUser() {
                 this.progress = true;
                 let userId = this.current;
                 axios.delete(webApi.users+'/'+userId)
@@ -181,7 +181,7 @@
                     .finally(this.progress = false);
                
             },
-            currentUser: function () {
+            currentUser() {
                 return this.users.find(e => e.Id == this.current);
             }
 
