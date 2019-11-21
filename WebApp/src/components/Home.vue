@@ -89,7 +89,7 @@
     import { DxForm, DxItem } from 'devextreme-vue/form';
     
     import ArrayStore from 'devextreme/data/array_store';
-    import State from '../state.js';
+    import State from 'state.js';
     import webApi from '../webapi.config.js';
     import axios from 'axios';
 
