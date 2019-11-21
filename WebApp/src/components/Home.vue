@@ -85,10 +85,9 @@
 
 <script>
     import {DxDataGrid, DxLookup,DxPager, DxPaging ,DxColumn } from 'devextreme-vue/data-grid';
-    import {  DxSelectBox,  DxButton } from 'devextreme-vue';
+    import {  DxSelectBox,  DxButton, DxTextBox } from 'devextreme-vue';
     import { DxForm, DxItem } from 'devextreme-vue/form';
-    import { DxTextBox } from 'devextreme-vue';
-
+    
     import ArrayStore from 'devextreme/data/array_store';
     import State from '../state.js';
     import webApi from '../webapi.config.js';
@@ -186,11 +185,9 @@
             },
             deleteUser: function () {
                 this.progress = true;
-                let userId = this.userData.Id;
+                let userId = this.current;
                 axios.delete(webApi.users+'/'+userId)
-                    .then(_ => {
-                        this.usersStore.remove(userId);
-                      })
+                    .then(_ => this.usersStore.remove(userId))
                     .catch(error => console.log(this.error = error))
                     .finally(this.progress = false);
                
