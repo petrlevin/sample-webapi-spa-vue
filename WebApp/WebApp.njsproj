@@ -39,9 +39,6 @@
     <Content Include="src\components\Home.vue">
       <SubType>Code</SubType>
     </Content>
-    <Content Include="src\state.js">
-      <SubType>Code</SubType>
-    </Content>
     <Content Include="src\webapi.config.js" />
   </ItemGroup>
   <ItemGroup>

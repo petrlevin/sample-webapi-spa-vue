@@ -152,30 +152,19 @@
             },
             modify: function () {
                 this.progress = true;
-                (this.state == State.editing ? this.update : this.insert)(_ => this.state = State.browsing);
-            },
-            insert: function (cb) {
-                axios.put(webApi.users, this.userData)
-                    .then(response => {
-                        console.log(response);
-                        this.userData.Id = response.Data;
-                        this.usersStore.insert(this.userData);
-                        cb();
-                    })
+                axios[this.state.action](webApi.users, this.userData)
+                    .then(response => this[this.state.callback](response))
+                    .then(_ => this.state = State.browsing)
                     .catch(error => console.log(this.error = error))
                     .finally(this.progress = false);
-           
             },
-            update: function (cb) {
-                let user = this.currentUser();
-                axios.post(webApi.users, this.userData)
-                    .then(_ => {
-                        Object.assign(user, this.userData);
-                        cb();
-                    })
-                    .catch(error => console.log(this.error = error))
-                    .finally(this.progress = false);
-               
+            onInsert: function (response) {
+                console.log(response);
+                this.userData.Id = response.data;
+                this.usersStore.insert(this.userData);       
+            },
+            onUpdate: function () {
+                Object.assign(this.currentUser(), this.userData);
             },
             startInsert: function () {
                 this.state = State.inserting;
